@@ -1,0 +1,141 @@
+.leftside {
+    width: 50vw;
+    background-color: #F4F4F4
+}
+
+.rightside {
+    width: 50vw;
+    background-color: #FFFFFF
+}
+
+#body-home {
+    background-color: #F4F4F4
+}
+
+#copyrights {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    color: #706C6C;
+}
+
+#container {
+    min-height: 100vh;
+    display: flex
+}
+
+#title {
+    color: #5A0C0C;
+}
+
+#big-title {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: #000000
+}
+
+#big-title-yellow {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: #FFC107
+}
+
+#sub-title {
+    color: #5A0C0C;
+}
+
+#sub-title-homepage {
+    font-family: 'Open Sans';
+    color: #5A0C0C;
+}
+
+#regloginfont {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    color: #706C6C;
+}
+
+#navbar {
+    background-color: #F4F4F4;
+}
+
+#navbar-font {
+    font-family: 'Montserrat';
+    color: #000000
+}
+
+#navbar-btn {
+    padding: 10px 40px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    background-color: #FFC107;
+    color: white
+}
+
+#register-login-btn {
+    padding: 10px 40px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #FFC107;
+    color: white;
+    box-shadow: 0px 1px 4px grey;
+}
+
+#btnleftside {
+    padding: 10px 80px;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    font-weight: bold;
+    border-width: 2px;
+    border-color: #FFC107;
+    color: #5A0C0C;
+    box-shadow: 0px 1px 2px grey;
+}
+
+#leftimg {
+    height: auto;
+    width: 450px;
+}
+
+#rightimg {
+    height: auto;
+    width: 450px;
+}
+
+#imgleftside {
+    padding-top: 10%;
+}
+
+#separatorfont {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    color: #706C6C;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #706C6C;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .50em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .50em;
+}
+
+#apilogin {
+    background-color: #706C6C;
+    padding: 10px 40px;
+    color: white;
+    text-align: center;
+}
