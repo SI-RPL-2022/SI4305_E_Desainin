@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +14,9 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <!-- font open sans-->
         <link href='https://fonts.googleapis.com/css?family=Open%20Sans' rel='stylesheet'>
+
+
         <link rel="stylesheet" href="css/desainin.css">
+        <title>{{ $title }}</title>
     </head>
 </html>

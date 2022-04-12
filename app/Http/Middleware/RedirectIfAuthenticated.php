@@ -27,6 +27,14 @@ class RedirectIfAuthenticated
             }
         }
 
+        // $guards2 = empty($guards2) ? [null] : $guards2;
+
+        // foreach ($guards2 as $guard2) {
+        //     if (Auth::guard($guard2)->check()) {
+        //         return redirect(RouteServiceProvider::DASHBOARD);
+        //     }
+        // }
+
         return $next($request);
     }
 }

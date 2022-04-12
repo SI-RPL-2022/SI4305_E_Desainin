@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DataUserController;
+use GuzzleHttp\Middleware;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,23 +19,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/register', function() {
-    return view('register');
-});
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/login', function() {
-    return view('login');
-});
+Route::get('/dashboard', [LoginController::class, 'admin'])->middleware('is_admin');
+// Route::get('/login', [LoginController::class, 'index'])->name('admin')->middleware('guest');
+// Route::get('/', [LoginController::class, 'admin'])->name('admin')->middleware('is_admin');
 
-Route::get('/forgotpassword', function() {
-    return view('forgotpassword');
-});
+// Route::resource('/dashboard', DataUserController::class)->middleware('is_admin');
 
 Route::get('/', function() {
-    return view('homepage');
+    return view('homepage', [
+        'title' => 'Home'
+    ]);
 });
-
