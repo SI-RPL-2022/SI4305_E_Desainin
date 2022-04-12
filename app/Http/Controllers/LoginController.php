@@ -24,7 +24,7 @@ class LoginController extends Controller
         if(Auth::attempt($credentials)) {
             if (auth()->user()->is_admin == 1) {
                 $request->session()->regenerate();
-                return redirect()->intended('/dashboard')->with('admin', 'Successfully login as admin!');
+                return redirect()->intended('/admin')->with('admin', 'Successfully login as admin. Welcome back!');
             } else {
                 $request->session()->regenerate();
                 return redirect()->intended('/');}
@@ -47,7 +47,7 @@ class LoginController extends Controller
     public function admin()
     {
         return view('adminview.index', [
-            'title' => 'Dashboard'
+            'title' => 'Home'
         ]);
     }
 }

@@ -14,7 +14,10 @@ class DataUserController extends Controller
      */
     public function index()
     {
-        //
+        return view('adminview.dashboard', [
+            'title' => 'Dashboard',
+            'users' => User::all(),
+        ]);
     }
 
     /**
@@ -80,6 +83,7 @@ class DataUserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        User::destroy($user->id);
+        return redirect('/dashboard')->with('deleted', 'User has been deleted from database.');
     }
 }

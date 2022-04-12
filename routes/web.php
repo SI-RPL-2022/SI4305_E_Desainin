@@ -26,11 +26,11 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard', [LoginController::class, 'admin'])->middleware('is_admin');
+Route::get('/admin', [LoginController::class, 'admin'])->middleware('is_admin');
 // Route::get('/login', [LoginController::class, 'index'])->name('admin')->middleware('guest');
 // Route::get('/', [LoginController::class, 'admin'])->name('admin')->middleware('is_admin');
 
-// Route::resource('/dashboard', DataUserController::class)->middleware('is_admin');
+Route::resource('/dashboard', DataUserController::class)->middleware('is_admin');
 
 Route::get('/', function() {
     return view('homepage', [
