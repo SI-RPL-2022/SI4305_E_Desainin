@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DataUserController;
+use App\Http\Controllers\PostController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -26,7 +28,10 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+Route::get('/post', [PostController::class, 'post'])->middleware('auth');
+
 Route::get('/admin', [LoginController::class, 'admin'])->middleware('is_admin');
+Route::get('/announcer', [AdminController::class, 'announcer'])->middleware('is_admin');
 // Route::get('/login', [LoginController::class, 'index'])->name('admin')->middleware('guest');
 // Route::get('/', [LoginController::class, 'admin'])->name('admin')->middleware('is_admin');
 
@@ -37,3 +42,4 @@ Route::get('/', function() {
         'title' => 'Home'
     ]);
 });
+
