@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
+use App\Models\User;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -50,7 +51,13 @@ Route::get('/', function() {
     ]);
 });
 
-Route::get('/collections', [PostController::class, 'index'])->middleware('auth');
+Route::get('/collections', [LoginController::class, 'collections'])->middleware('auth');
 
 // Route::get('/', [LoginController::class, 'homepage_user'])->middleware('auth');
 
+Route::get('/{desainer:username}', function(User $desainer) {
+    return view('post.desainerpost', [
+        'title' => 'Desainer Portfolios',
+        'posts' => $desainer->posts
+    ]);
+});

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,12 +16,20 @@ class LoginController extends Controller
         ]);
     }
 
-    public function homepage_user()
+    public function collections()
     {
-        return view('homepage', [
-            'title' => 'Home'
+        return view('collections', [
+            'title' => 'Portfolio Collections',
+            'posts' => Post::latest()->get()
         ]);
     }
+
+    // public function homepage_user()
+    // {
+    //     return view('homepage', [
+    //         'title' => 'Home'
+    //     ]);
+    // }
 
     public function authenticate(Request $request)
     {

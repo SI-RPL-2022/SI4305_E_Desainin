@@ -20,17 +20,17 @@
 @section('right')
     <div class="container">
         <div class="container pt-3">
-            @if(session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show pt-3" role="alert">
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show pt-3" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             @endif
-            @if(session()->has('failed'))
-            <div class="alert alert-danger alert-dismissible fade show pt-3" role="alert">
-                {{ session('failed') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+            @if (session()->has('failed'))
+                <div class="alert alert-danger alert-dismissible fade show pt-3" role="alert">
+                    {{ session('failed') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
             @endif
         </div>
         <div class="container px-5 py-5">
@@ -39,15 +39,22 @@
             <form action="/login" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="regloginfont" placeholder="Email" name="email" value="{{ old('email') }}" autofocus required>
+                    <input type="text" class="form-control @error('email') is-invalid @enderror" id="regloginfont"
+                        placeholder="Email" name="email" value="{{ old('email') }}" autofocus>
+                    @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
-                @error('email')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
                 <div class="mb-3">
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="regloginfont" placeholder="Password" name="password">
+                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="regloginfont"
+                        placeholder="Password" name="password">
+                    @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <center><button class="btn" id="register-login-btn">Login</button></center>
             </form>

@@ -16,7 +16,7 @@ class PostController extends Controller
     {
         return view('post.index', [
             'title' => 'My Post',
-            'posts' => Post::all()
+            'posts' => Post::where('user_id', auth()->user()->id)->latest()->get()
         ]);
     }
 
