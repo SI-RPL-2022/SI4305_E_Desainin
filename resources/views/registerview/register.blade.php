@@ -24,47 +24,60 @@
         <form style="padding-bottom: 30px" action="/register" method="POST">
             @csrf
             <div class="mb-3">
-                <input type="text" class="form-control @error('fullname') is-invalid @enderror" id="regloginfont" placeholder="Full Name" name="fullname" value="{{ old('fullname') }}" required>
+                <input type="text" class="form-control @error('fullname') is-invalid @enderror" id="regloginfont"
+                    placeholder="Full Name" name="fullname" value="{{ old('fullname') }}">
+                @error('fullname')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            @error('fullname')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
             <div class="mb-3">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" id="regloginfont" placeholder="Email" name="email" value="{{ old('email') }}" required>
+                <input type="text" class="form-control @error('username') is-invalid @enderror" id="regloginfont"
+                    placeholder="Username" name="username" value="{{ old('username') }}">
+                @error('username')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            @error('email')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
             <div class="mb-3">
-                <input type="tel" class="form-control @error('phonenumber') is-invalid @enderror" id="regloginfont" placeholder="Phone Number" name="phonenumber" value="{{ old('phonenumber') }}" required>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="regloginfont"
+                    placeholder="Email" name="email" value="{{ old('email') }}">
+                @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            @error('phonenumber')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
             <div class="mb-3">
-                <input type="password" class="form-control @error('password') is-invalid @enderror" id="regloginfont" placeholder="Password" name="password" required>
+                <input type="tel" class="form-control @error('phonenumber') is-invalid @enderror" id="regloginfont"
+                    placeholder="Phone Number" name="phonenumber" value="{{ old('phonenumber') }}">
+                @error('phonenumber')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            @error('password')
-            <div class="invalid-feedback">
-                {{ $message }}
+            <div class="mb-3">
+                <input type="password" class="form-control @error('password') is-invalid @enderror" id="regloginfont"
+                    placeholder="Password" name="password">
+                @error('password')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            @enderror
             <div class="mb-3 form-check pb-3">
                 <input type="checkbox" class="form-check-input @error('agreement') is-invalid @enderror" name="agreement">
                 <label id="regloginfont" class="form-check-label"><b>By clicking, you agree to the DesainIn`s Terms and
                         Condition</b></label>
+                @error('agreement')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            @error('agreement')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
             <center><button class="btn" id="register-login-btn">Register</button></center>
         </form>
         <div class="separator" id="separatorfont">OR</div>
