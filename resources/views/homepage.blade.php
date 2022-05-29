@@ -38,48 +38,6 @@
             </div>
         </div>
 
-        <div class="container pb-5">
-            <h2>Portfolio Collections</h2>
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-1 pt-1">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05pdKKwdtV4ShFi3lftV3u4z-i1bFTjs7UA&usqp=CAU"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Portofolio 1</h5>
-                            <p class="card-text">Ut ultrices semper elit, sit amet lacinia enim varius eget. Proin ultrices
-                                consequat ipsum, eu mattis neque accumsan at.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05pdKKwdtV4ShFi3lftV3u4z-i1bFTjs7UA&usqp=CAU"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Portofolio 2</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed
-                                placerat
-                                quam. Proin eleifend magna vel est sollicitudin gravida. Phasellus eu nunc in quam placerat
-                                sollicitudin id nec nisl. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05pdKKwdtV4ShFi3lftV3u4z-i1bFTjs7UA&usqp=CAU"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Portofolio 3</h5>
-                            <p class="card-text">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                                cubilia curae; Pellentesque habitant morbi tristique senectus et netus</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <a class="material-icons floating-btn" href="/post">add</a>
     @else
         <div class="container pt-5 pb-5 mb-4">
             <div class="row justify-content-center pt-2">

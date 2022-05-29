@@ -14,6 +14,13 @@ class LoginController extends Controller
         ]);
     }
 
+    public function homepage_user()
+    {
+        return view('homepage', [
+            'title' => 'Home'
+        ]);
+    }
+
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([

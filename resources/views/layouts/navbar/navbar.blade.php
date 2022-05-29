@@ -9,6 +9,9 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item ps-5">
+                    <a class="nav-link" href="/collections">Collections</a>
+                </li>
+                <li class="nav-item ps-5">
                     <a class="nav-link" href="#">About Us</a>
                 </li>
                 <li class="nav-item ps-5">
@@ -23,6 +26,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbar-font">{{ auth()->user()->fullname }}</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#" id="navbar-font">Profile</a></li>
+                        <li><a class="dropdown-item" href="/post" id="navbar-font">My Post</a></li>
                         <li>
                             <form action="/logout" method="POST">
                                 @csrf

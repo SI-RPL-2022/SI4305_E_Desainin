@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DataUserController;
 use App\Http\Controllers\PostController;
 use GuzzleHttp\Middleware;
+use Illuminate\Auth\Events\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +29,18 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/post', [PostController::class, 'post'])->middleware('auth');
 
 Route::get('/admin', [LoginController::class, 'admin'])->middleware('is_admin');
 Route::get('/announcer', [AdminController::class, 'announcer'])->middleware('is_admin');
 // Route::get('/login', [LoginController::class, 'index'])->name('admin')->middleware('guest');
 // Route::get('/', [LoginController::class, 'admin'])->name('admin')->middleware('is_admin');
+
+Route::get('/post', [PostController::class, 'index'])->middleware('auth');
+Route::get('/create', [PostController::class, 'create'])->middleware('auth');
+
+
+Route::post('/post', [PostController::class, 'store'])->middleware('auth');
+// Route::get('/post/create', [PostController::class, 'create'])->middleware('auth');
 
 Route::resource('/dashboard', DataUserController::class)->middleware('is_admin');
 
@@ -42,4 +49,8 @@ Route::get('/', function() {
         'title' => 'Home'
     ]);
 });
+
+Route::get('/collections', [PostController::class, 'index'])->middleware('auth');
+
+// Route::get('/', [LoginController::class, 'homepage_user'])->middleware('auth');
 

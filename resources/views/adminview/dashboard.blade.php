@@ -11,6 +11,7 @@
             </div>
         </div>
     @endif
+    <a href="/"></a>
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
@@ -33,6 +34,7 @@
                             <form action="/dashboard/{{ $user }}" method="POST">
                                 @method('delete')
                                 @csrf
+                                <input type="hidden" name="id" value="{{ $user->id }}">
                                 <button class="btn-danger" id="remove-btn"
                                     onclick="return confirm('Are you sure want to delete this user?')">Remove</button>
                             </form>

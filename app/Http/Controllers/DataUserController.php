@@ -87,11 +87,12 @@ class DataUserController extends Controller
     //     return 'deleted';
     //     // return redirect('/dashboard')->with('deleted', 'User has been deleted from database.');
     // }
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $user = User::findOrFail($id);
+        $id = $request->id;
+        $user = User::find($id);
         $user->delete();
 
-        return redirect()->route('adminview.dashboard')->with('deleted', 'User has been deleted from database.');
+        return redirect('/dashboard')->with('deleted', 'User has been deleted from database.');
     }
 }
