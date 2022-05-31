@@ -143,8 +143,10 @@
 }
 
 .karosel {
-    height: 480px;
-    width: 848px;
+    max-height: 480px;
+    max-width: 848px;
+    overflow: hidden;
+    object-fit: cover;
     border-style: solid;
     border-color: grey;
     border-width: 1px;

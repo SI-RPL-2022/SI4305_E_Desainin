@@ -13,8 +13,10 @@
                 @foreach ($posts as $post)
                     <div class="col">
                         <div class="card h-100">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05pdKKwdtV4ShFi3lftV3u4z-i1bFTjs7UA&usqp=CAU"
+                            <div style="max-height: 400px; overflow: hidden">
+                                <img src="{{ asset('storage/' . $post->image) }}"
                                 class="card-img-top" alt="...">
+                            </div>
                             <div class="card-body">
                                 <h3 class="card-title"><b>{{ $post->title }}</b></h3>
                                 <h5 class="card-text text-muted">{{ $post->created_at->diffForHumans() }}</h5>

@@ -6,7 +6,9 @@
                     <center>Portfolio Collections</center>
                 </b></h2>
             <div class="card mb-4">
-                <img src="https://source.unsplash.com/1200x400/?design-web" class="card-img-top" alt="...">
+                <div style="max-height: 480px; overflow: hidden">
+                    <img src="{{ asset('storage/' . $posts[0]->image) }}" class="card-img-top" alt="...">
+                </div>
                 <div class="card-body text-center">
                     <h5 class="card-title"><b>{{ $posts[0]->title }}</b></h5>
                     <h5 class="card-text text-muted">by <a
