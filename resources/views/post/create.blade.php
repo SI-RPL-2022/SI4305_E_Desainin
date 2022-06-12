@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="container pt-5 pb-5">
-        <form method="post" action="/post">
+        <form method="post" action="/post" enctype="multipart/form-data">
             @csrf
             <h2 class="pb-3" id="title"><b>Create New Portfolio</b></h2>
             <div class="mb-3">
@@ -25,8 +25,13 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="upload" class="form-label" id="formlabel">Upload Your Portfolio</label><br>
-                <input type="file" class="form-control" id="upload">
+                <label for="upload" class="form-label" id="formlabel">Upload Image</label><br>
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="upload" name="image">
+                @error('image')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <!-- Button trigger modal -->
@@ -54,7 +59,6 @@
                     </div>
                 </div>
             </div>
-            
         </form>
         <div style="clear: both;"></div>
     </div>

@@ -16,7 +16,7 @@ class PostController extends Controller
     {
         return view('post.index', [
             'title' => 'My Post',
-            'posts' => Post::all()
+            'posts' => Post::where('user_id', auth()->user()->id)->latest()->get()
         ]);
     }
 
@@ -42,9 +42,13 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
-            'body' => 'required'
+            'body' => 'required',
+            'image' => 'required|image|file|max:5120'
         ]);
-
+        
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
         $validatedData['user_id'] = auth()->user()->id;
 
         Post::create($validatedData);
