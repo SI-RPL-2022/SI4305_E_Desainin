@@ -59,7 +59,6 @@
                     </div>
                 </div>
             </div>
-
         </form>
         <div style="clear: both;"></div>
     </div>
