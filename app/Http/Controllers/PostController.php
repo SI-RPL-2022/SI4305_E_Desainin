@@ -41,7 +41,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'title' => 'required|max:255',
+            'title' => 'required|max:144',
             'body' => 'required',
             'image' => 'required|image|file|max:5120'
         ]);
@@ -63,7 +63,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('post.singlepost', [
+            'post' => $post,
+            'title' => "Portfolio Detail"
+        ]);
     }
 
     /**

@@ -221,3 +221,16 @@ textarea{
     -webkit-filter: saturate(0.2) opacity(0.5);
     cursor: not-allowed;
 }
+
+.comment-username {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    color: #5A0C0C
+}
+
+.comment {
+    font-family: 'Open Sans';
+    font-size: 12px;
+    line-height: 1.6;
+    color: #706C6C
+}

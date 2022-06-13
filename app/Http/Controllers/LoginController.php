@@ -24,6 +24,13 @@ class LoginController extends Controller
         ]);
     }
 
+    public function profile()
+    {
+        return view('profile', [
+            'title' => 'Profile'
+        ]);
+    }
+
     // public function homepage_user()
     // {
     //     return view('homepage', [

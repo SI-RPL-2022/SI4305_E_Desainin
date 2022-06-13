@@ -41,6 +41,7 @@ Route::get('/create', [PostController::class, 'create'])->middleware('auth');
 
 
 Route::post('/post', [PostController::class, 'store'])->middleware('auth');
+Route::get('/post-{post:id}', [PostController::class, 'show'])->middleware('auth');
 // Route::get('/post/create', [PostController::class, 'create'])->middleware('auth');
 
 Route::resource('/dashboard', DataUserController::class)->middleware('is_admin');
@@ -52,6 +53,7 @@ Route::get('/', function() {
 });
 
 Route::get('/collections', [LoginController::class, 'collections'])->middleware('auth');
+Route::get('/profile', [LoginController::class, 'profile'])->middleware('auth');
 
 // Route::get('/', [LoginController::class, 'homepage_user'])->middleware('auth');
 

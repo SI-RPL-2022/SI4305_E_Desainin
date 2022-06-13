@@ -28,7 +28,7 @@
                             id="navbar-font">{{ auth()->user()->username }}</a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item" href="#" id="navbar-font">
+                                <a class="dropdown-item" href="/profile" id="navbar-font">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-person" viewBox="0 0 16 16">
                                         <path
