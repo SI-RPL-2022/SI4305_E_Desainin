@@ -54,6 +54,7 @@ Route::get('/', function() {
 
 Route::get('/collections', [LoginController::class, 'collections'])->middleware('auth');
 Route::get('/profile', [LoginController::class, 'profile'])->middleware('auth');
+Route::post('/profile', [LoginController::class, 'update_profile'])->middleware('auth');
 
 // Route::get('/', [LoginController::class, 'homepage_user'])->middleware('auth');
 

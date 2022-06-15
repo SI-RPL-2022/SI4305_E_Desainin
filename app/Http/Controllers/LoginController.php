@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,8 +27,34 @@ class LoginController extends Controller
     public function profile()
     {
         return view('profile', [
-            'title' => 'Profile'
+            'title' => 'Profile',
+            'avatar' => User::where('avatar', auth()->user()->avatar)->get()
         ]);
+    }
+
+    public function update_profile(Request $request)
+    {
+        $user = $request->post('id');
+
+        $validatedData = $request->validate([
+            'avatar' => 'image|file|max:5120',
+            'username',
+            'phonenumber',
+            'password' => 'confirmed'
+        ]);
+
+        if($request->file('image')) {
+            $validatedData['avatar'] = $request->file('image')->store('post-images');
+        }
+
+        $inputedData = User::find($user);
+        $inputedData->avatar = $validatedData['avatar'];
+        $inputedData->username = $validatedData['username'];
+        $inputedData->phonenumber = $validatedData['phonenumber'];
+        $inputedData->password = Hash::make($validatedData['password']);
+        $inputedData->save();
+
+        return redirect('/profile')->with('success', 'Data Berhasil di Update!');
     }
 
     // public function homepage_user()

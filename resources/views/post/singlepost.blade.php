@@ -8,7 +8,7 @@
                 <h5 class="card-text text-muted">by <a
                         href="/{{ $post->user->username }}">{{ $post->user->fullname }}</a> |
                     {{ $post->created_at->diffForHumans() }}</h5>
-                <h5 class="card-text pt-3">{{ $post->body }}</h5>
+                <h5 class="card-text pt-3" style="line-height: 1.6">{{ $post->body }}</h5>
             </div>
         </div>
 

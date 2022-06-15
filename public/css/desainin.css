@@ -234,3 +234,9 @@ textarea{
     line-height: 1.6;
     color: #706C6C
 }
+
+#profile-font {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    color: #5A0C0C;
+}
