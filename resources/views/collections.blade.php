@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     @if ($posts->count())
-        <div class="container pt-5 pb-5">
+        <div class="container py-5">
             <h2 class="pb-3" id="title"><b>
                     <center>Portfolio Collections</center>
                 </b></h2>

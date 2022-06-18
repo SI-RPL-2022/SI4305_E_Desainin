@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phonenumber');
             $table->string('password');
-            $table->string('avatar')->nullable();
             $table->boolean('is_admin')->nullable();
         });
     }
