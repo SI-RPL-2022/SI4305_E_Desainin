@@ -20,7 +20,7 @@
                     <th scope="col">Fullname</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone Number</th>
-                    <th scope="col">Action</th>
+                    {{-- <th scope="col">Action</th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +30,7 @@
                         <td>{{ $user['fullname'] }}</td>
                         <td>{{ $user['email'] }}</td>
                         <td>{{ $user['phonenumber'] }}</td>
-                        <td>
+                        {{-- <td>
                             <form action="/dashboard/{{ $user }}" method="POST">
                                 @method('delete')
                                 @csrf
@@ -38,7 +38,7 @@
                                 <button class="btn-danger" id="remove-btn"
                                     onclick="return confirm('Are you sure want to delete this user?')">Remove</button>
                             </form>
-                        </td>
+                        </td> --}}
                     </tr>
                 @endforeach
             </tbody>
