@@ -2,28 +2,36 @@
 
 @section('content')
     @auth
-        <div class="container pt-5 pb-5 mb-5" align="center">
+        <div class="container py-5" align="center">
             <div class="karosel">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                            class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                            aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                            aria-label="Slide 3"></button>
+                        @foreach ($announcements as $key => $announcement)
+                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide-to="{{ $loop->index }}" class="{{ $key == 0 ? 'active' : '' }}"
+                                aria-current="{{ $key == 0 ? 'true' : '' }}"
+                                aria-label="Slide {{ $loop->iteration }}"></button>
+                        @endforeach
                     </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="7500">
-                            <img src="https://source.unsplash.com/1280x720/?modern-house" class="d-block w-100" alt="">
+                    @if ($announcements->isNotEmpty())
+                        <div class="carousel-inner">
+                            @foreach ($announcements as $key => $announcement)
+                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="7500">
+                                    <img src="{{ asset('storage/' . $announcement->banner_image) }}" class="d-block w-100"
+                                        alt="..." style="max-height: 640px">
+                                </div>
+                            @endforeach
                         </div>
-                        <div class="carousel-item" data-bs-interval="7500">
-                            <img src="img/mockup-announcement-2.png" class="d-block w-100" alt="">
+                    @else
+                        <div class="carousel inner">
+                            <div class="carousel-item active">
+                                <img src="img/mockup-announcement-1.png" class="d-block w-100" alt=""
+                                    style="max-height: 640px">
+                                {{-- <img src="https://source.unsplash.com/1280x720/?illustrations" alt=""> --}}
+                            </div>
                         </div>
-                        <div class="carousel-item" data-bs-interval="7500">
-                            <img src="img/mockup-announcement-3.png" class="d-block w-100" alt="">
-                        </div>
-                    </div>
+                    @endif
+
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,7 +45,6 @@
                 </div>
             </div>
         </div>
-
     @else
         <div class="container pt-5 pb-5 mb-4">
             <div class="row justify-content-center pt-2">

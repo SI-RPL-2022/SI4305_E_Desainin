@@ -5,8 +5,8 @@
             <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title"><b>{{ $post->title }}</b></h5>
-                <h5 class="card-text text-muted">by <a
-                        href="/{{ $post->user->username }}">{{ $post->user->fullname }}</a> |
+                <h5 class="card-text text-muted">by <a href="/{{ $post->user->username }}">{{ $post->user->fullname }}</a>
+                    |
                     {{ $post->created_at->diffForHumans() }}</h5>
                 <h5 class="card-text pt-3" style="line-height: 1.6">{{ $post->body }}</h5>
             </div>
@@ -17,16 +17,23 @@
             <div class="container px-3 pt-2">
                 <div class="separator card-title" id="separatorfont"></div>
                 <div class="pt-3 pb-5">
-                    <form action="">
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    <form action="{{ url('save-comment/post-') . $post->id }}" method="post">
+                        @csrf
                         <div class="mb-3">
                             <textarea class="form-control @error('body') is-invalid @enderror" placeholder="Write a comment here..." id="body"
-                                name="comment"></textarea>
+                                name="body"></textarea>
                         </div>
-                        {{-- @error('body')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror --}}
+                        @error('body')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                         <!-- Button trigger modal -->
                         <button type="button" class="btn" id="btnpost" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
@@ -57,28 +64,12 @@
                     <div style="clear: both;"></div>
 
                 </div>
-                <div class="container py-3">
-                    <h5 class="comment-username"><b>Username</b></h5>
-                    <h5 class="comment">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum ullam
-                        reiciendis quod aliquid ab perspiciatis maxime vero fugiat laudantium vitae provident, obcaecati
-                        commodi accusamus recusandae soluta. Distinctio, veritatis temporibus! Perspiciatis assumenda quod
-                        tenetur, iste corporis recusandae eveniet cupiditate voluptatibus impedit odit quas, sint sunt
-                        necessitatibus voluptatem esse rerum aliquam iure nulla atque quos quisquam exercitationem? Et in
-                        doloremque aut aliquid officia id excepturi temporibus, voluptatem accusantium eum, enim nostrum,
-                        tempora eaque perspiciatis? Adipisci similique dolor maxime consequatur rem tempore impedit quidem
-                        officia laboriosam, consectetur culpa amet sit sunt est harum nulla? Quaerat unde et ducimus!
-                        Nesciunt quaerat sequi excepturi sint.</h5>
-                </div>
-                <div class="container py-3">
-                    <h5 class="comment-username"><b>Username</b></h5>
-                    <h5 class="comment">Komentar panjang ini adalah sebuah penilaian yang ditujukan untuk portfolio
-                        seorang desainer.</h5>
-                </div>
-                <div class="container py-3">
-                    <h5 class="comment-username"><b>Username</b></h5>
-                    <h5 class="comment">Komentar panjang ini adalah sebuah penilaian yang ditujukan untuk portfolio
-                        seorang desainer.</h5>
-                </div>
+                @foreach($comments as $comment)
+                    <div class="container py-3">
+                        <h5 class="comment-username"><b>{{ $comment->user->username }}</b></h5>
+                        <h5 class="comment">{{ $comment->body }}</h5>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
