@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('post_id');
             $table->text('body');
-            $table->timestamp('commented_at')->nullable;
+            $table->timestamp('commented_at')->nullable();
             $table->timestamps();
         });
     }

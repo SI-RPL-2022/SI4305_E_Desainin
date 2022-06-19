@@ -64,9 +64,14 @@
                     <div style="clear: both;"></div>
 
                 </div>
-                @foreach($comments as $comment)
+                @foreach ($comments as $comment)
                     <div class="container py-3">
-                        <h5 class="comment-username"><b>{{ $comment->user->username }}</b></h5>
+                        <div class="pb-2">
+                            <h5 class="d-inline comment-username pe-1"><b>{{ $comment->user->username }}</b>
+                                <h5 class="d-inline card-text text-muted">{{ $comment->created_at->diffForHumans() }}
+                                </h5>
+                            </h5>
+                        </div>
                         <h5 class="comment">{{ $comment->body }}</h5>
                     </div>
                 @endforeach

@@ -66,7 +66,7 @@ class PostController extends Controller
     {
         return view('post.singlepost', [
             'post' => $post,
-            'comments' => Comment::where('post_id', $post->id)->get(),
+            'comments' => Comment::where('post_id', $post->id)->latest()->get(),
             'title' => "Portfolio Detail"
         ]);
     }
