@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Comment;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class AnnouncementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index', [
-            'title' => 'My Post',
-            'posts' => Post::where('user_id', auth()->user()->id)->latest()->get()
+        return view('homepage', [
+            'title' => 'Home',
+            'announcements' => Announcement::all()
         ]);
     }
 
@@ -28,9 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create', [
-            'title' => 'Create Post'
-        ]);
+        //
     }
 
     /**
@@ -41,43 +38,42 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // ddd($request);
+        $id = $request->id;
         $validatedData = $request->validate([
             'title' => 'required|max:144',
-            'body' => 'required',
-            'image' => 'required|image|file|max:5120'
+            'description' => 'required',
+            'banner_image' => 'required|image|file|max:5120'
         ]);
-        
-        if($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('post-images');
-        }
-        $validatedData['user_id'] = auth()->user()->id;
 
-        Post::create($validatedData);
-        return redirect('/post')->with('Success', 'Your portfolio has been posted successfully');
+        if($request->file('banner_image')) {
+            $validatedData['banner_image'] = $request->file('banner_image')->store('post-images');
+        }
+        $validatedData['id'] = $id;
+
+        Announcement::create($validatedData);
+
+        return redirect('/announcer')->with('success', 'Banner has been announced!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Announcement  $announcement
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Announcement $announcement)
     {
-        return view('post.singlepost', [
-            'post' => $post,
-            'comments' => Comment::where('post_id', $post->id)->get(),
-            'title' => "Portfolio Detail"
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Announcement  $announcement
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Announcement $announcement)
     {
         //
     }
@@ -86,10 +82,10 @@ class PostController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Announcement  $announcement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Announcement $announcement)
     {
         //
     }
@@ -97,10 +93,10 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Post  $post
+     * @param  \App\Models\Announcement  $announcement
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Announcement $announcement)
     {
         //
     }

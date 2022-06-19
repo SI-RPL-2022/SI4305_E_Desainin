@@ -33,11 +33,18 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'body' => 'required'
         ]);
+        $data = new Comment;
+        $data->user_id = $request->user()->id;
+        $data->post_id = $id;
+        $data->body = $request->body;
+        $data->save();
+
+        return redirect('/post-' . $id)->with('success', 'Comment sent!');
     }
 
     /**
