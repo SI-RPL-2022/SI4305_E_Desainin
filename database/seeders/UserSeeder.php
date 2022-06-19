@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Comment;
 use App\Models\Post;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -32,6 +33,12 @@ class UserSeeder extends Seeder
             'email' => 'himawannaufal59@gmail.com',
             'phonenumber' => '087741702385',
             'password' => Hash::make('password'),
+        ]);
+
+        Comment::create([
+            'user_id' => 2,
+            'post_id' => 1,
+            'body' => 'This is comment seeder',
         ]);
 
         // Post::create([
