@@ -37,7 +37,7 @@ Bagi kalian yang ingin menggunakan aplikasi ini, silakan ikuti langkah-langkah d
 3. Ketikkan perintah ```composer install``` pada _terminal_, lalu tunggu proses instalasi/pembaruan berhasil dijalankan
 4. Salin _file_ ```.env.example``` yang ada pada _project_ tersebut dan tempelkan juga pada _project_ tersebut, lalu ubah/_rename_ _file_ tersebut menjadi ```.env```
 5. Sesuaikan nama _database_ pada _file_ ```.env``` dengan nama _database_ yang sudah/ingin kalian buat
-6. Salin ```FILESYSTEM_DISK=public``` dan tempel pada baris paling bawah dalam _file_ ```.env``` untuk mengatur konfigurasi penyimpanan<br><img src="https://drive.google.com/uc?export=view&id=1dfDKNzJ9SSzpMF0-XbJVU_gLXCvg2OGC">
+6. Pada ```.env```, ubah ```FILESYSTEM_DISK=local``` menjadi ```FILESYSTEM_DISK=public```<br><img src="https://drive.google.com/uc?export=view&id=1eGG4Pilzmj_0qeKDUl5EZUSM0g58Xpc2">
 7. Ketikkan perintah ```php artisan storage:link``` pada _terminal_ untuk menghubungkan penyimpanan pribadi dengan penyimpanan publik (konfigurasi _folder_ untuk mengunggah gambar pada _website_)
 8. Ketikkan perintah ```php artisan key:generate``` pada _terminal_ untuk meng-_generate_ _key_
 9. Ketikkan perintah ```php artisan migrate:fresh --seed``` pada _terminal_ untuk melakukan migrasi _database_ sekaligus menambahkan _seed_ (berisi data akun admin) untuk _database_
