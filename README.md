@@ -1,6 +1,64 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://drive.google.com/uc?export=view&id=1gpJm9KXfbQpjtQ-Jkqh60v57yfa8qOiR" width="400"></a></p>
 
-<p align="center">
+## Capstone Project: Desainin Website Application
+
+Hai, semua! Perkenalkan kami dari Kelompok E kela SI-43-05. Kelompok E terdiri dari:
+
+- Ahmad Fachrulroji | github: <a href="https://github.com/IDKuroNeko"><b>IDKuroNeko</b></a>
+- Aulia Basyirah | github: <a href="https://github.com/auliab51"><b>auliab51</b></a>
+- Muhammad Rifqi Setiawan | github: <a href="https://github.com/rifqisetiawann"><b>rifqisetiawann</b></a>
+- Naufal Aqil Himawan | github: <a href="https://github.com/naufal-aqil"><b>naufal-aqil</b></a>
+- Raden Khalid Jati Junjunan Septian Budy Putra	jatijunanptr | github: <a href="https://github.com/jatijunanptr"><b>jatijunanptr</b></a>
+
+Pada project ini, tim kami membuat sebuah website untuk para desainer yang ingin mengunggah hasil karya mereka ke dalam sebuah forum dan mendapat berbagai macam feedback dari orang lain. Apa anda tidak asing dengan Pinterest? Github (tentu saja tidak, kan? Haha!)? Website kami memiliki fitur serupa terhadap website yang sudah disebutkan sebelumnya. Pengguna sebagai desainer dapat mengunggah hasil karyanya ke website kami, lalu pengguna lain dapat mengirimkan feedback terhadap karya tersebut dalam bentuk komentar yang bisa dilihat oleh siapa saja layaknya forum diskusi.
+
+Berikut kami persembahkan, <b>Desainin Website Application</b>
+
+## Framework
+
+<a href="https://laravel.com"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a>
+
+Laravel menjadi framework yang kami gunakan untuk membangun website ini.
+
+## Introduction to Desainin
+
+Our platform engaged many designers in many places from Indonesia that hire their abilities in the field of design services. Our platform also helps to simplify many vendors or other customers who need design services.
+
+## How to Use
+
+Bagi kalian yang ingin menggunakan aplikasi ini, silakan ikuti langkah-langkah di bawah ini.
+
+1. Lakukan clone terhadap repository ini. Ketikkan perintah berikut melalui terminal/bash pada folder yang sudah kalian siapkan untuk project ini
+```git clone https://github.com/SI-RPL-2022/SI4305_E_Desainin.git```
+2. Buka project ini melalui text editor yang kalian punya (bisa gunakan Visual Studio Code), lalu buka terminal baru untuk project ini
+3. Ketikkan perintah berikut pada terminal, lalu tunggu proses instalasi/pembaruan berhasil dijalankan
+```composer install```
+4. Salin file .env.example dan tempel pada project tersebut, lalu rename menjadi .env
+5. Sesuaikan nama database pada file .env dengan nama database yang sudah/ingin kalian buat
+6. Salin 'FILESYSTEM_DISK=public' dan tempel pada baris paling bawah dalam file .env
+7. Ketikkan perintah berikut pada terminal untuk menghubungkan penyimpanan pribadi dengan penyimpanan publik (konfigurasi folder untuk mengunggah gambar pada website)
+```php artisan storage:link```
+8. Ketikkan perintah berikut pada terminal untuk meng-generate key
+```php artisan key:generate```
+9. Ketikkan perintah berikut pada terminal untuk melakukan migrasi database sekaligus menambahkan seed (berisi data akun admin) untuk database
+```php artisan migrate:fresh --seed```
+10. Ketikkan perintah berikut pada terminal untuk menjalankan localhost pada device masing-masing (pastikan XAMPP sudah dalam keadaan menyala pada Apache dan MySQL)
+```php artisan serve```
+11. Silakan akses localhost-nya dan selamat menggunakan aplikasi Desainin :)
+
+note:
+
+Akun admin
+- email: admin@desainin.com
+- password: admin
+
+## Closing
+
+Terima kasih sudah menggunakan aplikasi kami!
+
+Project ini dibuat untuk memenuhi tugas besar mata kuliah Rekayasa Perangkat Lunak.
+
+<!-- <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
@@ -61,4 +119,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
