@@ -10,7 +10,7 @@ Hai, semua! Perkenalkan kami dari Kelompok E kelas SI-43-05. Kelompok E terdiri 
 - Naufal Aqil Himawan | github: <a href="https://github.com/naufal-aqil"><b>naufal-aqil</b></a>
 - Raden Khalid Jati Junjunan Septian Budy Putra	jatijunanptr | github: <a href="https://github.com/jatijunanptr"><b>jatijunanptr</b></a>
 
-Pada _project_ ini, tim kami membuat sebuah _website_ untuk para desainer yang ingin mengunggah hasil karya mereka ke dalam sebuah forum dan mendapat berbagai macam feedback dari orang lain. Apa anda tidak asing dengan _Pinterest_? _Github_ (Tentu saja tidak asing, kan? Haha!)? _Website_ kami memiliki fitur serupa terhadap _website_ yang sudah disebutkan sebelumnya. Pengguna sebagai desainer dapat mengunggah hasil karyanya ke _website_ kami, lalu pengguna lain dapat mengirimkan _feedback_ terhadap karya tersebut dalam bentuk komentar yang bisa dilihat oleh siapa saja layaknya forum diskusi.
+Pada _project_ ini, tim kami membuat sebuah _website_ untuk para desainer yang ingin mengunggah hasil karya mereka ke dalam sebuah forum dan mendapat berbagai macam _feedback_ dari orang lain. Apa anda tidak asing dengan _Pinterest_? _Github_ (Tentu saja tidak asing, kan? Haha!)? _Website_ kami memiliki fitur serupa terhadap _website_ yang sudah disebutkan sebelumnya. Pengguna sebagai desainer dapat mengunggah hasil karyanya ke _website_ kami, lalu pengguna lain dapat mengirimkan _feedback_ terhadap karya tersebut dalam bentuk komentar yang bisa dilihat oleh siapa saja layaknya forum diskusi.
 
 Berikut kami persembahkan, <b>Desainin Website Application</b>
 
