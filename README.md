@@ -16,7 +16,7 @@ Berikut kami persembahkan, <b>Desainin Website Application</b>
 
 ## Framework
 
-<a href="https://laravel.com"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a>
+<a href="https://laravel.com"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a><br>
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
@@ -47,8 +47,8 @@ Bagi kalian yang ingin menggunakan aplikasi ini, silakan ikuti langkah-langkah d
 ***NOTE***
 
 - Akun _admin_
-email: admin@desainin.com
-password: admin
+<br>email: admin@desainin.com
+<br>password: admin
 - Beberapa fitur masih belum tersedia seperti laman _About us_ dan _Contact us_
 - Untuk mengganti profil seperti _username_ dan _phone_ _number_, silakan inputkan _password_ terlebih dahulu (bisa menginputkan _password_ lama (_password_ yang digunakan untuk _login_) maupun _password_ baru jika _ingin_ mengganti _password_)
 - Untuk mengubah _banner_ pada laman _homepage_ _user_, silakan masuk sebagai _admin_ dan pilih _Announcer_ pada _Dashboard_. Gambar yang disarankan untuk diunggah adalah gambar dengan aspek rasio 2.39 agar ukuran gambar pada laman homepage _user_ menjadi maksimal (tidak menjadi _stretched_)
