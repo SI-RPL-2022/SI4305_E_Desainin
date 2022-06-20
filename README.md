@@ -35,7 +35,7 @@ Bagi kalian yang ingin menggunakan aplikasi ini, silakan ikuti langkah-langkah d
 1. Lakukan _clone_ terhadap repository ini. Ketikkan perintah ```git clone https://github.com/SI-RPL-2022/SI4305_E_Desainin.git``` melalui _terminal/bash_ pada _folder_ yang sudah kalian siapkan untuk _project_ ini
 2. Buka _project_ ini melalui _text editor_ yang kalian punya (bisa gunakan Visual Studio Code), lalu buka _terminal_ baru untuk _project_ ini
 3. Ketikkan perintah ```composer install``` pada _terminal_, lalu tunggu proses instalasi/pembaruan berhasil dijalankan
-4. Salin _file_ ```.env.example``` dan tempel pada _project_ tersebut, lalu ubah/_rename_ _file_ tersebut menjadi ```.env```
+4. Salin _file_ ```.env.example``` yang ada pada _project_ tersebut dan tempelkan juga pada _project_ tersebut, lalu ubah/_rename_ _file_ tersebut menjadi ```.env```
 5. Sesuaikan nama _database_ pada _file_ ```.env``` dengan nama _database_ yang sudah/ingin kalian buat
 6. Salin ```FILESYSTEM_DISK=public``` dan tempel pada baris paling bawah dalam _file_ ```.env``` untuk mengatur konfigurasi penyimpanan<br><img src="https://drive.google.com/uc?export=view&id=1dfDKNzJ9SSzpMF0-XbJVU_gLXCvg2OGC">
 7. Ketikkan perintah ```php artisan storage:link``` pada _terminal_ untuk menghubungkan penyimpanan pribadi dengan penyimpanan publik (konfigurasi _folder_ untuk mengunggah gambar pada _website_)
