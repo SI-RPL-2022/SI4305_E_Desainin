@@ -52,7 +52,7 @@ Bagi kalian yang ingin menggunakan aplikasi ini, silakan ikuti langkah-langkah d
 <br>email: admin@desainin.com
 <br>password: admin
 - Beberapa fitur masih belum tersedia seperti laman _About us_ dan _Contact us_
-- Untuk mengganti profil seperti _username_ dan _phone_ _number_, silakan inputkan _password_ terlebih dahulu (bisa menginputkan _password_ lama (_password_ yang digunakan untuk _login_) maupun _password_ baru jika _ingin_ mengganti _password_)
+- Untuk mengganti profil seperti _username_ dan _phone_ _number_, silakan inputkan _password_ terlebih dahulu (bisa menginputkan _password_ lama (_password_ yang digunakan untuk _login_) maupun _password_ baru jika ingin mengganti _password_)
 - Untuk mengubah _banner_ pada laman _homepage_ _user_, silakan masuk sebagai _admin_ dan pilih _Announcer_ pada _Dashboard_. Gambar yang disarankan untuk diunggah adalah gambar dengan aspek rasio 2.39 agar ukuran gambar pada laman homepage _user_ menjadi maksimal (tidak menjadi _stretched_)
 
 ## Closing
