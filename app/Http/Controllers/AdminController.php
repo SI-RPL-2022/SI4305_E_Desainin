@@ -9,7 +9,7 @@ class AdminController extends Controller
     public function announcer()
    {
        return view('adminview.announce', [
-           'title' => 'Announcers'
+           'title' => 'Announcerss'
        ]);
    } 
 }
